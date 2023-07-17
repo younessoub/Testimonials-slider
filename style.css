@@ -15,9 +15,6 @@ img {
     max-width: 100%;
 }
 
-body {
-    /* background-color: var(--GrayishBlue); */
-}
 
 .main-wrapper {
     display: flex;
