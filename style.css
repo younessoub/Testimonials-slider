@@ -1,0 +1,236 @@
+:root {
+    --DarkBlue: hsl(240, 38%, 20%);
+    --GrayishBlue: hsl(240, 18%, 77%);
+    --font-size: 32px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    /* background-color: var(--GrayishBlue); */
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    min-height: 100vh;
+}
+
+.img-wrapper {
+    padding: 30px 20px 0 20px;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+
+.img {
+    background-image: url('./images/pattern-bg.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img img {
+    border-radius: 10px;
+    transform: scale(.8);
+    transition: opacity 1s;
+}
+
+/* 
+.slide-right-animation {
+    animation: slide-right 2s;
+}
+
+.slide-left-animation {
+    animation: slide-left 2s;
+} */
+
+@keyframes slide-right {
+    0% {
+        margin-right: 0%;
+    }
+
+    100% {
+        margin-right: -200%;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+        margin-left: 0%;
+    }
+
+    100% {
+        margin-left: -200%;
+    }
+}
+
+
+.slider {
+    /* border: 1px solid red; */
+    width: 90px;
+    height: 40px;
+    display: flex;
+    border-radius: 50px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 15px;
+    background-color: white;
+    box-shadow: -50px 15px 40px var(--GrayishBlue);
+    z-index: 10;
+}
+
+.slider-control {
+    /* border: 1px solid red; */
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.slider-control img {
+    width: 12px;
+}
+
+.text-wrapper {
+    background-image: url('./images/pattern-quotes.svg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 20%;
+    padding: 35px 30px 0 30px;
+    font-size: 23px;
+}
+
+.testimonial {
+    text-align: center;
+    color: var(--DarkBlue);
+    opacity: .8;
+    margin-bottom: 30px;
+    transition: all 500ms ease;
+}
+
+.author {
+    text-align: center;
+}
+
+.author b {
+    color: var(--DarkBlue);
+    transition: all 500ms ease;
+
+}
+
+.author p {
+    transition: all 500ms ease;
+
+    color: var(--GrayishBlue);
+}
+
+.curve {
+    z-index: -20;
+}
+
+
+.attribution {
+    margin: 30px 0;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+@media (min-width:800px) {
+    .main-wrapper {
+        justify-content: center;
+        position: relative;
+    }
+
+    .flex-wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        /* border: 1px solid red; */
+    }
+
+    .img-wrapper {
+        width: 50%;
+        /* border: 1px solid red; */
+        margin-bottom: 0;
+        transform: scale(1.4) translateX(-80px);
+    }
+
+    .slider {
+        /* border: 1px solid red; */
+        /* width: 100px;
+        height: 50px; */
+        left: 25%;
+        margin: unset;
+        bottom: 25px;
+        box-shadow: -50px 15px 40px var(--GrayishBlue);
+    }
+
+
+    .text-wrapper {
+        /* border: 1px solid red; */
+        padding: 70px 50px 0 0px;
+        width: 50%;
+        background-position: 15% top;
+        background-size: 15%;
+        transform: translateX(50px)
+    }
+
+    .testimonial {
+        text-align: left;
+        font-size: 25px;
+    }
+
+    .author {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .curve {
+        position: absolute;
+        bottom: 0;
+    }
+
+}
+
+@media (min-width:1100px) {
+
+    .text-wrapper {
+        padding: 70px 0px 0 60px;
+    }
+
+    .testimonial {
+        font-size: var(--font-size);
+    }
+
+    .slider {
+        width: 100px;
+        height: 50px;
+
+    }
+}
